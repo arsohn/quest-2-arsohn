@@ -1,9 +1,8 @@
+#pragma once
 class account {
 public:
-	account(){}
 	bool pay_in(float value);
 	bool pay_out(float value);
-private:
 	int id;
 	int pin;
 	float balance = 0.0;

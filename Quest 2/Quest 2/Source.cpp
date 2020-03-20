@@ -10,6 +10,7 @@ using namespace std;
 int main() {
 	char choice;
 	char choice2 = 'y';
+	interaction ATMMachine;
 	
 	while (choice2 != 'n') {
 		cout << "Please choose one of the following options - " << endl << endl;
@@ -22,40 +23,44 @@ int main() {
 		cout << "Choice: ";
 		cin >> choice;
 
-		interaction interaction;
 		switch (choice) {
 		case 'A': int id, pin;
 		case 'a': cout << "Please enter your id number: ";
-			cin >> id;
-			cout << "Please enter your pin number";
-			cin >> pin;
-			interaction::authorization(id, pin);
-			break;
+				  cin >> id;
+				  cout << "Please enter your pin number";
+				  cin >> pin;
+				  ATMMachine.authorization(id, pin);
+				  break;
 
 		case 'R': int id, pin;
 		case 'r': cout << "Please enter your id number: ";
-			cin >> id;
-			cout << "Please enter your pin number";
-			cin >> pin;
-			interaction::registration(id, pin);
-			break;
+				  cin >> id;
+				  cout << "Please enter your pin number";
+				  cin >> pin;
+				  ATMMachine.registration(id, pin);
+				  break;
 
 		case 'B':
-		case 'b': interaction::balance();
-			break;
+		case 'b': ATMMachine.balance();
+				  break;
 
 		case 'T': float value;
 		case 't': cout << "Please enter the desired amount to be transfered: ";
-			cin >> value;
+				  cin >> value;
+				  
+				  int id;
+				  cout << "Enter the account number that you would like to transfer money too: ";
+				  cin >> id;
+				  
+				  
+				  ATMMachine.transfer(value);
+				  break;
 
-			interaction::transfer();
-			break;
-
-		case 'L': interaction::logout();
+		case 'L': ATMMachine.logout();
 		case 'l':
 			break;
 
-		case 'C': interaction::terminate();
+		case 'C': ATMMachine.terminate();
 		case 'c':  
 			break;
 		}

@@ -4,7 +4,12 @@
 
 
 void interaction::authorization(int id, int pin) {
-	
+	account account;
+	if (id == account.id) {
+		
+	}
+	else
+		std::cout << "Error, no match";
 }
 void interaction::registration(int id, int pin) {
 
@@ -20,5 +25,4 @@ void interaction::logout() {
 }
 void interaction::terminate(char choice) {
 
-	cin >> 
 }
